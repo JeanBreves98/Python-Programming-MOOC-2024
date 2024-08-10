@@ -3,6 +3,8 @@ def line(times, string):
     
     print(first_character * times)
     
-times = 5
-string = "bleh"
-line(times,string)
+
+if __name__ == "__main__":    
+    times = 5
+    string = "bleh"
+    line(times,string)

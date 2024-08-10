@@ -11,6 +11,7 @@ def square(lenght, string):
         line(i, string)
         i += 1
 
-lenght = 5
-string = "#"
-square(lenght, string)
+if __name__ == "__main__":
+    lenght = 5
+    string = "#"
+    square(lenght, string)

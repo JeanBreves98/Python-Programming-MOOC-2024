@@ -12,5 +12,6 @@ def square_of_hashes(lenght):
         i -= 1
 
 
-lenght = 5
-square_of_hashes(lenght)
+if __name__ == "__main__":
+    lenght = 5
+    square_of_hashes(lenght)

@@ -17,8 +17,9 @@ def shape(width, triangle_body, height, rectangle_body):
         k -= 1
 
 
-width = 3
-triangle_body = "."
-height = 0
-rectangle_body = ""
-shape(width, triangle_body, height, rectangle_body)
+if __name__ == "__main__":
+    width = 3
+    triangle_body = "."
+    height = 0
+    rectangle_body = ""
+    shape(width, triangle_body, height, rectangle_body)

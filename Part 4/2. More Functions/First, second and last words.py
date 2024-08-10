@@ -17,11 +17,11 @@ def last_word(sentence):
     return sentence    
 
 
-sentence = "it was a dark and stormy python"
-space = " "
-word_count = len(sentence.split()) # Maybe it won't be necessary
+if __name__ == "__main__":
+    sentence = "it was a dark and stormy python"
+    space = " "
+    word_count = len(sentence.split()) # Maybe it won't be necessary
 
-print(first_word(sentence)) 
-
-print(second_word(sentence)) 
-print(last_word(sentence)) #Small error
+    print(first_word(sentence)) 
+    print(second_word(sentence)) 
+    print(last_word(sentence)) #Small error

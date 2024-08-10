@@ -10,6 +10,7 @@ def square(lenght, string):
         line(lenght, string)
         i -= 1
 
-lenght = 3
-string = "o"
-square(lenght, string)
+if __name__ == "__main__":
+    lenght = 3
+    string = "o"
+    square(lenght, string)

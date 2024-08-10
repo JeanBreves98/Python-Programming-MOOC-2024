@@ -14,6 +14,6 @@ def box_of_hashes(height):
         height -= 1
 
 
-
-height = 5
-box_of_hashes(height)
+if __name__ == "__main__":
+    height = 5
+    box_of_hashes(height)
