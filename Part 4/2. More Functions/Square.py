@@ -1,7 +1,10 @@
 def line(times, string):
-    first_character = string[0]
+    if string == "":
+        first_character = "*"
+    else: 
+        first_character = string[0]
     
-    print(first_character * times)   
+    print(first_character * times) 
 
 
 def square(lenght, string):

@@ -1,9 +1,11 @@
 def spruce(size):
+    body = '*'
     i = 1
     k = 1
     space = size - 1
     blank = (space * " ")
 
+    print("a spruce!")
     print(blank + (body * k) + blank)
     
     while i < size:
@@ -18,6 +20,5 @@ def spruce(size):
 
 if __name__ == "__main__":
     size = 7
-    body = '*'
     base = (size - 1) * 2 + 1
     spruce(size)
