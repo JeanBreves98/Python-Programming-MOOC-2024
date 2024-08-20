@@ -1,19 +1,13 @@
 def column_correct(sudoku: list, column_no: int):
     item_list = []
-    row_count = 0
-    row_list = []
 
     for row in sudoku:
         for item in row:
-            if item == row[column_no]:
-                item_list.append(row[column_no])
-
-    for item in item_list:
-        if item != 0:
-            if item in row_list:
-                return False
-            else:
-                row_list.append(item)
+            if item == row[column_no] and item != 0:
+                if item in item_list:
+                    return False
+                else:
+                    item_list.append(item)
 
     return True
 
@@ -31,5 +25,12 @@ if __name__ == "__main__":
     [3, 0, 0, 0, 0, 0, 0, 0, 2]
     ]
 
-    print(column_correct(sudoku, 0))
-    print(column_correct(sudoku, 1))   
+    print(column_correct(sudoku, 0)) #False
+    print(column_correct(sudoku, 1))  
+    print(column_correct(sudoku, 2))
+    print(column_correct(sudoku, 3))
+    print(column_correct(sudoku, 4))
+    print(column_correct(sudoku, 5))
+    print(column_correct(sudoku, 6))
+    print(column_correct(sudoku, 7))
+    print(column_correct(sudoku, 8))
