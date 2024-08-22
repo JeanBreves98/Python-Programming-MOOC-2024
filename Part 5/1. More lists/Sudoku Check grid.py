@@ -1,5 +1,6 @@
 def sudoku_grid_correct(sudoku: list):
     row_bolean = row_correct(sudoku)
+
     if row_bolean == False:
         return False
     column_bolean = column_correct(sudoku)
@@ -10,7 +11,6 @@ def sudoku_grid_correct(sudoku: list):
         return False
     
     return True
-
 
 
 def row_correct(sudoku: list):
@@ -110,4 +110,3 @@ if __name__ == "__main__":
         [7, 4, 5, 0, 0, 3, 9, 0, 1]
     ]
     print(sudoku_grid_correct(sudoku3))  # Should print False (duplicate 6 in third block)
-
