@@ -1,13 +1,13 @@
 def block_correct(sudoku: list, row_no: int, column_no: int):
-    item_list = []
+    block_list = []
 
     for row in range(row_no, row_no + 3):
         for column in range(column_no, column_no + 3):
             item = sudoku[row][column]
             if item != 0:
-                if item in item_list:
+                if item in block_list:
                     return False
-                item_list.append(item)
+                block_list.append(item)
     
     return True
 
