@@ -18,10 +18,30 @@ def print_sudoku(sudoku):
         print()
 
 
-def add_number(sudoku: list, row_no: int, column_no: int, number:int):
-    sudoku[row_no][column_no] = number
+def copy_and_add(original, row_no, column_no, number):
+    copy = [[], [], [], [], [], [], [], [], []]
+    copy_list = []
 
-if __name__ == "__main__":
+    for row in sudoku:
+        for item in row:
+            copy_list.append(item)
+
+    copy[0] = copy_list[0:9]
+    copy[1] = copy_list[9:18]
+    copy[2] = copy_list[18:27]
+    copy[3] = copy_list[27:36]
+    copy[4] = copy_list[36:45]
+    copy[5] = copy_list[45:54]
+    copy[6] = copy_list[54:63]
+    copy[7] = copy_list[63:72]
+    copy[8] = copy_list[72:81]
+
+    copy[row_no][column_no] = number
+
+    return copy
+
+
+if __name__ == "__main__": 
     sudoku  = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -34,11 +54,9 @@ if __name__ == "__main__":
     [0, 0, 0, 0, 0, 0, 0, 0, 0]
     ]
 
+    grid_copy = copy_and_add(sudoku, 0, 0, 2)
+    print("Original:")
     print_sudoku(sudoku)
-    add_number(sudoku, 0, 0, 2)
-    add_number(sudoku, 1, 2, 7)
-    add_number(sudoku, 5, 7, 3)
     print()
-    print("Three numbers added:")
-    print()
-    print_sudoku(sudoku)
+    print("Copy:")
+    print_sudoku(grid_copy)
