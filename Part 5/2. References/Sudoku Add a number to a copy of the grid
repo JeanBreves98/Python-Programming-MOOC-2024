@@ -11,9 +11,9 @@ def print_sudoku(sudoku):
             if index_square % 3 == 0 and index_square != 0:
                 print(" ", end="")
             if square > 0:
-                print(f" {square}", end="")
+                print(f"{square} ", end="")
             else:
-                print(" _", end="")
+                print("_ ", end="")
             index_square += 1
         print()
 
