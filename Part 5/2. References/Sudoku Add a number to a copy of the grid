@@ -22,7 +22,7 @@ def copy_and_add(original, row_no, column_no, number):
     copy = [[], [], [], [], [], [], [], [], []]
     copy_list = []
 
-    for row in sudoku:
+    for row in original:
         for item in row:
             copy_list.append(item)
 
