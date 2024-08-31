@@ -15,16 +15,35 @@ def add_course(students, name, course):
         if existing_course[0] == course_name:
             if grade > existing_course[1]:  # If the new course has a bigger grade, it removes the old one and add another in its place
                 student_courses.remove(existing_course)
-                student_courses.append((course_name, grade, existing_course[2]))
+                student_courses.append((course_name, grade))
             return
 
-    if course_count == 0:   # If course list is empty the average is equal to the grade
-        average = grade
-    else:   # If there is already a course on the list this line calculates what the average will be with the new course
-        total_grades = sum(c[1] for c in student_courses) + grade
-        average = total_grades / (course_count + 1)
+    students[name].append((course_name, grade))   # Adds a course to a student
 
-    students[name].append((course_name, grade, average))   # Adds a course to a student
+
+def summary(students):
+    student_count = 0
+    most_courses = 0
+    top_student_courses  = None
+    top_student_averages = None
+    highest_average = 0
+    student_count = len(students)
+
+    for student, courses in students.items():
+        course_count = len(courses)
+        if course_count > most_courses:
+            most_courses = course_count
+            top_student_courses = student
+        if course_count > 0:
+            total_grades = sum(course[1] for course in courses)
+            average = total_grades / course_count
+            if average > highest_average:
+                highest_average = average
+                top_student_averages = student
+
+    print(f"students {student_count}")
+    print(f"most courses completed {most_courses} {top_student_courses}")
+    print(f"best average grade {highest_average} {top_student_averages} ")
 
 
 def print_student(students, name):
@@ -44,7 +63,10 @@ def print_student(students, name):
         for course in students[name]:
             print(f"  {course[0]} {course[1]}")
         
-        print(f" average grade {course[2]:.1f}")
+        total_grades = sum(course[1] for course in students[name])
+        average = total_grades / course_count
+
+        print(f" average grade {average:.1f}")
 
 
 if __name__ == "__main__":  
@@ -59,3 +81,4 @@ if __name__ == "__main__":
     print_student(students, "Peter")
     print_student(students, "Eliza")
     print_student(students, "Jack")
+    summary(students)
