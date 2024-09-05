@@ -1,6 +1,5 @@
-def matrix_sum():
+def read_matrix():
     matrix = []
-    matrix_sum = 0
 
     with open("matrix.txt") as file:
         for line in file:
@@ -13,6 +12,13 @@ def matrix_sum():
                     row.append(element)
             if row: # Checks if the row is empty
                 matrix.append(row)
+
+    return matrix
+
+
+def matrix_sum():
+    matrix = read_matrix()
+    matrix_sum = 0
 
     for matrix_row in matrix:   # Gets the sum of each row of the matrix and then adds it to the matrix sum
         matrix_sum += sum(matrix_row)
@@ -21,45 +27,20 @@ def matrix_sum():
     
         
 def matrix_max():
-    matrix = []
+    matrix = read_matrix()
     greatest = 0
-
-    with open("matrix.txt") as file:
-        for line in file:
-            row = []
-            line = line.replace("\n", "")
-            elements = line.split(",")
-            for element in elements:
-                if element: # Checks if the element is empty
-                    element = int(element)
-                    row.append(element)
-            if row: # Checks if the row is empty
-                matrix.append(row)
 
     for matrix_row in matrix:
         row_max = max(matrix_row)
         if row_max > greatest:
             greatest = row_max
 
-
     print(greatest)
 
 
 def row_sums():
-    matrix = []
+    matrix = read_matrix()
     row_sums = []
-
-    with open("matrix.txt") as file:
-        for line in file:
-            row = []
-            line = line.replace("\n", "")
-            elements = line.split(",")
-            for element in elements:
-                if element: # Checks if the element is empty
-                    element = int(element)
-                    row.append(element)
-            if row: # Checks if the row is empty
-                matrix.append(row)
 
     for matrix_row in matrix:
         row_sum = sum(matrix_row)
