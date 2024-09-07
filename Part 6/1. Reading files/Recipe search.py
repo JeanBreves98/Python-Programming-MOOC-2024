@@ -45,14 +45,14 @@ def read_recipes(filename):
 
     with open(filename) as recipe_file:
         for line in recipe_file:
-            line = line.strip()
-            if line == "":
-                if recipe:
+            line = line.strip() # Removes trailing spaces
+            if line == "":  # Checks if the line is empty
+                if recipe:  # Checks if there is data on the recipe
                     recipes.append(recipe)
                 recipe = []
             else:
                 recipe.append(line)
-    if recipe:
+    if recipe:  # This is necessary because the last recipe does not have an empty line after it, so it ends up not being appended to the recipes without this line
         recipes.append(recipe)
 
     return recipes
