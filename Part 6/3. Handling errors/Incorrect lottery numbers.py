@@ -40,5 +40,6 @@ def filter_incorrect():
             
             correct_numbers.write(f"{week};{numbers_str}\n")
 
+
 if __name__ == "__main__":
     filter_incorrect()

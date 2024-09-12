@@ -7,6 +7,7 @@ def new_person(name: str, age: int):
     else:
         return (name, age)
     
+    
 if __name__ == "__main__":
     print(new_person("Jean Moutinho", 25))   # Valid input
     print(new_person(" ", 27))   # Invalid due to name being an empty string

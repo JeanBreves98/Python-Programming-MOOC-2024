@@ -2,7 +2,7 @@ def read_input(string, lower_limit, upper_limit):
     while True:
         try:
             number = int(input(string))
-            if number >= 5 and number <= 10:
+            if number >= lower_limit and number <= upper_limit:
                 return number
         except:
             pass

@@ -15,4 +15,3 @@ def read_fruits():
 
 if __name__ == "__main__":
     print(read_fruits())
-    

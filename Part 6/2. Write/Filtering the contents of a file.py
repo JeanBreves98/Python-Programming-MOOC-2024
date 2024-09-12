@@ -42,6 +42,5 @@ def filter_solutions():
     write_incorrect(incorrect_solutions)
     
 
-
 if __name__ == "__main__":
     filter_solutions()

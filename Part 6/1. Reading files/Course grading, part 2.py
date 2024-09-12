@@ -26,7 +26,6 @@ with open(exam_points) as exam_file:    # Reads the exam file
             continue
         exam_grades[parts[0]] = list(map(int, parts[1:]))
 
-
 for id, name in students.items():
     if id in grades and id in exam_grades:
         completed_exercises = sum(grades[id])

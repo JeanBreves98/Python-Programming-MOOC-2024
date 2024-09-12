@@ -52,6 +52,7 @@ def read_recipes(filename):
                 recipe = []
             else:
                 recipe.append(line)
+                
     if recipe:  # This is necessary because the last recipe does not have an empty line after it, so it ends up not being appended to the recipes without this line
         recipes.append(recipe)
 
