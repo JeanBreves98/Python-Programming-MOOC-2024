@@ -9,8 +9,8 @@ def print_persons(filename: str):
     for student in students:
         hobbies = ''
         for hobby in student["hobbies"]:
-            hobbies += hobby + ', '
-        hobbies = hobbies[:-2]
+            hobbies += hobby + ', ' # Could have used join
+        hobbies = hobbies[:-2]  # Eliminates the last comma and space
         print(f"{student["name"]} {student["age"]} years ({hobbies})")
 
 if __name__ == "__main__":
