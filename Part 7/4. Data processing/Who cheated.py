@@ -29,7 +29,7 @@ def read_files():
     
     return cheaters
 
-def cheaters():
+def cheaters(): # Can be improved
     cheaters = read_files()
     no_duplicates = [] 
 
