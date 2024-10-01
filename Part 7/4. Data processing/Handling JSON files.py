@@ -6,6 +6,8 @@ def print_persons(filename: str):
 
     students = json.loads(data)
 
+    print(students) 
+
     for student in students:
         hobbies = ''
         for hobby in student["hobbies"]:
